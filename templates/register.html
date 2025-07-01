@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Application Form</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="reg_container">
+        <h1 class="form-header">
+            University Application Form
+        </h1>
+        <p class="form-description">
+            Please fill out the form below accurately and completely to apply for admission to our university.
+        </p>
+        <form action="#" method="POST" class="space-y-6-emulated">
+            {% csrf_token %}
+            <div class="form-section personal-info-section">
+                <h2 class="form-section-header">Personal Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="eg.James John" required>
+                    </div>
+                    <!-- Email Address -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="eg.jamesjohn@example.com" required>
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="eg.0545555555">
+                    </div>
+                    <!-- Date of Birth -->
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <!-- Gender -->
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section address-info-section">
+                <h2 class="form-section-header">Address Information</h2>
+                <div class="form-grid">
+                    <div class="form-group md-col-span-2">
+                        <label for="streetAddress">Street Address</label>
+                        <input type="text" id="streetAddress" name="streetAddress" placeholder="eg.uk-0000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="eg.Navrongo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stateProvince">Region</label>
+                        <input type="text" id="stateProvince" name="region" placeholder="eg.upper east" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">District</label>
+                        <input type="text" id="postalCode" name="district" placeholder="eg.district" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="GHA">Ghana</option>
+                            <option value="NIG">Nigeria</option>
+                            <option value="BUR">Burkina Faso</option>
+                            <option value="TOG">Togo</option>
+                            <option value="MAL">Mali</option>
+                            <option value="OTHR">Others</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div class="form-section academic-info-section">
+                <h2 class="form-section-header">Academic Information</h2>
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="previousSchool">Previous School Name</label>
+                        <input type="text" id="previousSchool" name="previousSchool" placeholder="eg. Navrongo SHS" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gpa">Aggregrade</label>
+                        <input type="number" id="gpa" name="gpa" step="1" min="6" max="30" placeholder="eg.12">
+                    </div>
+                    <div class="form-group md-col-span-2">
+                        <label for="programOfInterest">Program of Interest</label>
+                        <select id="programOfInterest" name="programOfInterest" required>
+                            <option value="">Select Program</option>
+                            <option value="computer_science">Computer Science</option>
+                            <option value="engineering">Software Engineering</option>
+                            <option value="business">Business Administration</option>
+                            <option value="arts">Liberal Arts</option>
+                            <option value="medicine">Medicine</option>
+                            <!-- Add more programs as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group md-col-span-2">
+                        <label for="sop">Statement of Purpose (Optional)</label>
+                        <textarea id="sop" name="sop" rows="5" placeholder="Tell us about your academic goals and why you chose this university..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section emergency-contact-section">
+                <h2 class="form-section-header">Emergency Contact</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="emergencyName">Full Name</label>
+                        <input type="text" id="emergencyName" name="emergencyName" placeholder="eg.joe john" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emergencyRelationship">Relationship</label>
+                        <input type="text" id="emergencyRelationship" name="emergencyRelationship" placeholder="eg.father" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emergencyPhone">Phone Number</label>
+                        <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="eg.0205555555" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="declaration-section">
+                <div class="declaration-checkbox-group">
+                    <input id="declaration" name="declaration" type="checkbox" required>
+                    <label for="declaration">
+                        I certify that the information provided is true and accurate to the best of my knowledge.
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Submit Application
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

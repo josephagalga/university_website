@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+
+
+    <div class="home_navbar">
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#academics">Academics</a>
+            <a href="#admissions">Admissions</a>
+            <a href="#campus-life">Campus Life</a>
+            <a href="#news-events">News & Events</a>
+            <a href="{% url 'register' %}">Apply</a>
+            <a href="{% url 'login' %}">Login</a>
+        </nav>
+    </div>
+
+    <div id="home_img">
+        <img src="{% static 'images/pict.jpg'%}">
+    </div>
+
+
+    <div class="htext">
+        <p style="    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); color: #ccc; position: absolute; top: 2px; left: 400px; font-family: fantasy; font-size: 50px;" >Welcome</p> 
+        <p style="color: White; position: absolute; top: 50px; left: 470px; font-family: fantasy; font-size: 50px;">To</p>
+    </br>
+        <p style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); color: #ccc; position: absolute; top: 100px; left: 250px; font-family: fantasy; font-size: 50px;">Our School Management System</p>
+    </br>
+        <div id="h_stext">
+            <h1>Igniting Minds, Shaping Futures.</h1>
+            <p style="color: white; position: absolute; top: 100px;";>Discover a world of opportunities and innovation at our esteemed university.</p>
+            
+        </div>
+    </div>
+
+
+
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <h2 class="section-title">About Our University</h2>
+            <p class="section-description">
+                Committed to academic excellence and groundbreaking research, we foster a vibrant community where students thrive.
+                Our mission is to empower the next generation of leaders and innovators.
+            </p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Innovation</h3>
+                    <p>Driving progress through cutting-edge research and creative solutions.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Community</h3>
+                    <p>A diverse and inclusive environment where every voice is valued.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Excellence</h3>
+                    <p>Maintaining the highest standards in teaching and student achievement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="academics">
+        <div class="container">
+            <h2 class="section-title">Academic Excellence</h2>
+            <p class="section-description">
+                Explore our wide range of undergraduate and postgraduate programs designed to equip you with the skills for tomorrow's challenges.
+            </p>
+            <div class="academics-grid">
+                <div class="academic-card">
+                    <h3>Computer Science</h3>
+                    <p>Leading the digital revolution with advanced computing courses.</p>
+                </div>
+                <div class="academic-card">
+                    <h3>Natural Sciences</h3>
+                    <p>Unraveling the mysteries of the universe through scientific inquiry.</p>
+                </div>
+                <div class="academic-card">
+                    <h3>Law & Humanities</h3>
+                    <p>Fostering critical thinking and a deep understanding of society.</p>
+                </div>
+                <div class="academic-card">
+                    <h3>Business & Economics</h3>
+                    <p>Preparing future leaders for the global marketplace.</p>
+                </div>
+            </div>
+
+        
+        </section>
+
+
+        <section id="admissions">
+            <div class="container">
+                <h2 class="section-title">Admissions</h2>
+                <p class="section-description">
+                    Your journey starts here. Find out how to apply, scholarship opportunities, and key dates.
+                </p>
+                <div class="admissions-grid">
+                    <a href="#" class="admissions-card">
+                        <h3>How to Apply</h3>
+                        <p>Step-by-step guide for prospective students.</p>
+                    </a>
+                    <a href="#" class="admissions-card">
+                        <h3>Scholarships</h3>
+                        <p>Explore financial aid and scholarship options.</p>
+                    </a>
+                    <a href="#" class="admissions-card">
+                        <h3>Important Dates</h3>
+                        <p>Keep track of application deadlines and events.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="campus-life">
+            <div class="container">
+                <h2 class="section-title">Campus Life</h2>
+                <p class="section-description">
+                    Experience a vibrant student life with numerous clubs, activities, and support services.
+                </p>
+                <div class="campus-life-grid">
+                    <div class="campus-card">
+                        <img src="{% static 'images/clubs.jpg'%}" alt="Student Clubs">
+                        <h3>Student Clubs & Organizations</h3>
+                        <p>Join a community that shares your passions.</p>
+                    </div>
+                    <div class="campus-card">
+                        <img src="{% static 'images/facility.jpg'%}" alt="Campus Facilities">
+                        <h3>Modern Facilities</h3>
+                        <p>State-of-the-art labs, libraries, and recreational spaces.</p>
+                    </div>
+                    <div class="campus-card">
+                        <img src="{% static 'images/sports.jpg'%}" alt="Sports and Recreation">
+                        <h3>Sports & Recreation</h3>
+                        <p>Stay active and compete in various athletic programs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news-events">
+            <div class="container">
+                <h2 class="section-title">Latest News & Events</h2>
+                <div class="news-events-grid">
+                    <div class="news-card">
+                        <img src="{% static 'images/ai_research.png'%}" alt="Research Breakthrough">
+                        <div class="news-content">
+                            <h3>Groundbreaking Research in AI</h3>
+                            <p class="date">October 26, 2025</p>
+                            <p>Our faculty achieves a major breakthrough in artificial intelligence...</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="{% static 'images/career_fair.png'%}" alt="Annual Career Fair">
+                        <div class="news-content">
+                            <h3>Annual Career Fair 2025</h3>
+                            <p class="date">November 15, 2025</p>
+                            <p>Connect with leading companies at our upcoming career fair...</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="{% static 'images/alumni_networking.png'%}" alt="Alumni Meetup">
+                        <div class="news-content">
+                            <h3>Alumni Networking Event</h3>
+                            <p class="date">December 02, 2025</p>
+                            <p>Join us for an exclusive alumni meetup and networking session...</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-40">
+                    <a href="#" class="btn btn-primary">    </a>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-university">
+                    <h3>University Name</h3>
+                    <p>
+                        Dedicated to fostering intellectual growth, critical thinking, and a commitment to service.
+                        Empowering students to make a positive impact on the world.
+                    </p>
+                </div>
+                <div class="footer-col quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-info">
+                    <h3>Contact Us</h3>
+                    <p>123 University Ave, City, Country</p>
+                    <p>+1 (123) 456-7890</p>
+                    <p>info@university.edu</p>
+                </div>
+                <div class="footer-col social-media">
+                    <h3>Follow Us</h3>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Agalga Joseph. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
